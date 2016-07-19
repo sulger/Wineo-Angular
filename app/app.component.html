@@ -1,0 +1,66 @@
+<h1>Gestion de cave à vin</h1>
+
+<div id="maCave">
+
+    <div>
+        <label>Nom du propriétaire</label>
+        <span>{{ cave.nomProprietaire }}</span>
+    </div>
+    <div>
+        <label>Capacité maximale</label>
+        <span>{{ cave.capaciteMaximale }}</span>
+    </div>
+    <div>
+        <label>Emplacement</label>
+        <span>{{ cave.emplacement }}</span>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let b of cave.bouteilles">
+                <div>
+                    <label>Référence</label>
+                    <span>{{ b.reference }}</span>
+                </div>
+                <div>
+                    <label>Désignation</label>
+                    <span>{{ b.designation }}</span>
+                </div>
+                <div>
+                    <label>Année</label>
+                    <span>{{ b.annee }}</span>
+                </div>
+                <div>
+                    <label>Contenance</label>
+                    <span>{{ b.contenance }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    <hr />
+
+<div id="nouvelleBouteille">
+
+    <h2>Ajouter une nouvelle bouteille</h2>
+
+    <div>
+        <label>Référence</label>
+        <input [(ngModel)]="nouvelleBouteille.reference" />
+    </div>
+    <div>
+        <label>Désignation</label>
+        <input [(ngModel)]="nouvelleBouteille.designation" />
+    </div>
+    <div>
+        <label>Année</label>
+        <input [(ngModel)]="nouvelleBouteille.annee" />
+    </div>
+    <div>
+        <label>Contenance</label>
+        <input [(ngModel)]="nouvelleBouteille.contenance" />
+    </div>
+
+    <button (click)="ajouterNouvelleBouteille()">OK</button>
+
+</div>
