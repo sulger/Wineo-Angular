@@ -1,23 +1,39 @@
 <h1>Gestion de cave à vin</h1>
 
-<div id="maCave">
+<div id="listeCave">
+
+    <ul>
+        <li *ngFor="let c of caves">
+            <span (click)="selectionnerCave(c)">
+                {{ c.emplacement }} ({{ c.nomProprietaire }})
+            </span>
+        </li>
+    </ul>
+
+</div>
+
+<hr />
+
+<div id="detailCave" *ngIf="caveSelectionnee">
 
     <div>
         <label>Nom du propriétaire</label>
-        <span>{{ cave.nomProprietaire }}</span>
+        <span>{{ caveSelectionnee.nomProprietaire }}</span>
     </div>
     <div>
         <label>Capacité maximale</label>
-        <span>{{ cave.capaciteMaximale }}</span>
+        <span>{{ caveSelectionnee.capaciteMaximale }}</span>
     </div>
     <div>
         <label>Emplacement</label>
-        <span>{{ cave.emplacement }}</span>
+        <span>{{ caveSelectionnee.emplacement }}</span>
     </div>
     <div>
         <ul>
-            <li *ngFor="let b of cave.bouteilles">
-                <span (click)="selectionnerBouteille(b)">{{ b.reference }}</span>
+            <li *ngFor="let b of caveSelectionnee.bouteilles">
+                <span (click)="selectionnerBouteille(b)">
+                    {{ b.designation }} ({{ b.reference }})
+                </span>
             </li>
         </ul>
     </div>
@@ -42,9 +58,9 @@
 
 <hr />
 
-<div id="nouvelleBouteille">
+<div id="nouvelleBouteille" *ngIf="caveSelectionnee">
 
-    <h2>Ajouter une nouvelle bouteille</h2>
+    <h2>Ajouter une nouvelle bouteille dans la cave de : {{ caveSelectionnee.nomProprietaire | uppercase }}</h2>
 
     <div>
         <label>Référence</label>
