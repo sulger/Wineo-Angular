@@ -41,20 +41,11 @@
 
 <hr />
 
-<div id="detailBouteille" *ngIf="bouteilleSelectionnee">
-    <div>
-        <span>{{ bouteilleSelectionnee.reference }}</span>
-    </div>
-    <div>
-        <span>{{ bouteilleSelectionnee.designation }}</span>
-    </div>
-    <div>
-        <span>{{ bouteilleSelectionnee.annee }}</span>
-    </div>
-    <div>
-        <span>{{ bouteilleSelectionnee.contenance }}L</span>
-    </div>
-</div>
+<!--
+    Utiliser le composant détail-bouteille
+    pour afficher la bouteille sélectionnée
+-->
+<detail-bouteille [bouteille]="bouteilleSelectionnee"></detail-bouteille>
 
 <hr />
 
