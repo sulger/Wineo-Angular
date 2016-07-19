@@ -17,28 +17,30 @@
     <div>
         <ul>
             <li *ngFor="let b of cave.bouteilles">
-                <div>
-                    <label>Référence</label>
-                    <span>{{ b.reference }}</span>
-                </div>
-                <div>
-                    <label>Désignation</label>
-                    <span>{{ b.designation }}</span>
-                </div>
-                <div>
-                    <label>Année</label>
-                    <span>{{ b.annee }}</span>
-                </div>
-                <div>
-                    <label>Contenance</label>
-                    <span>{{ b.contenance }}</span>
-                </div>
+                <span (click)="selectionnerBouteille(b)">{{ b.reference }}</span>
             </li>
         </ul>
     </div>
 </div>
 
-    <hr />
+<hr />
+
+<div id="detailBouteille" *ngIf="bouteilleSelectionnee">
+    <div>
+        <span>{{ bouteilleSelectionnee.reference }}</span>
+    </div>
+    <div>
+        <span>{{ bouteilleSelectionnee.designation }}</span>
+    </div>
+    <div>
+        <span>{{ bouteilleSelectionnee.annee }}</span>
+    </div>
+    <div>
+        <span>{{ bouteilleSelectionnee.contenance }}L</span>
+    </div>
+</div>
+
+<hr />
 
 <div id="nouvelleBouteille">
 
@@ -54,7 +56,7 @@
     </div>
     <div>
         <label>Année</label>
-        <input [(ngModel)]="nouvelleBouteille.annee" />
+        <input [(ngModel)]="nouvelleBouteille.annee"  />
     </div>
     <div>
         <label>Contenance</label>

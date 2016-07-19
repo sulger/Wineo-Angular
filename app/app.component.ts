@@ -9,6 +9,7 @@ import {Bouteille} from "./domain/bouteille";
 
 export class AppComponent {
 
+    // Cave de l'utilisateur
     public cave: Cave = {
         nomProprietaire: 'Toto',
         capaciteMaximale: 100,
@@ -35,10 +36,18 @@ export class AppComponent {
         ]
     }
 
+    // Bouteille à créer.
     public nouvelleBouteille: Bouteille = new Bouteille();
+
+    // Bouteille sélectionnée dans la liste.
+    public bouteilleSelectionnee: Bouteille;
 
     public ajouterNouvelleBouteille() {
         this.cave.bouteilles.push(this.nouvelleBouteille);
+    }
+
+    public selectionnerBouteille(bouteille: Bouteille) {
+        this.bouteilleSelectionnee = bouteille;
     }
 
 }
