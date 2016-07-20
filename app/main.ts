@@ -1,3 +1,5 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
-bootstrap(AppComponent);
+import {routerService} from "./service/router.service";
+
+bootstrap(AppComponent, [routerService]);

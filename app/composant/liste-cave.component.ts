@@ -1,18 +1,25 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 
 import {Cave} from "../domain/cave";
 import {DetailCaveComponent} from "./detail-cave.component";
+import {CaveService} from "../service/cave.service";
 
 @Component({
     selector: 'liste-cave',
     templateUrl: 'app/composant/liste-cave.component.html',
-    directives: [DetailCaveComponent]
+    directives: [DetailCaveComponent],
+    providers: [CaveService]
 })
 
-export class ListeCaveComponent {
+export class ListeCaveComponent implements OnInit {
+
+    /**
+     * Constructeur définissant le fournisseur de CaveService à injecter.
+     * @param caveService Le fournisseur de CaveService.
+     */
+    public constructor(private caveService: CaveService) { }
 
     // Caves à afficher.
-    @Input()
     public caves: Cave[];
 
     // Cave sélectionnée dans la liste.
@@ -25,6 +32,10 @@ export class ListeCaveComponent {
      */
     public selectionnerCave(cave: Cave) {
         this.caveSelectionnee = cave;
+    }
+
+    public ngOnInit() {
+        this.caves = this.caveService.obtenirCaves();
     }
 
 }

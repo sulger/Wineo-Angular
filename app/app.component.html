@@ -1,4 +1,8 @@
 <h1>Gestion de cave à vin</h1>
 
-<liste-cave [caves]="caves"></liste-cave>
+<nav>
+    <a [routerLink]="['']">Accueil</a>
+    <a [routerLink]="['/caves']">Liste des caves</a>
+</nav>
 
+<router-outlet></router-outlet>
