@@ -1,0 +1,27 @@
+<div id="nouvelleBouteille" *ngIf="cave">
+
+    <fieldset>
+        <legend>Ajouter une nouvelle bouteille dans la cave de : {{ cave.nomProprietaire | uppercase }}</legend>
+
+        <div>
+            <label>Référence</label>
+            <input [(ngModel)]="bouteille.reference" />
+        </div>
+        <div>
+            <label>Désignation</label>
+            <input [(ngModel)]="bouteille.designation" />
+        </div>
+        <div>
+            <label>Année</label>
+            <input [(ngModel)]="bouteille.annee"  />
+        </div>
+        <div>
+            <label>Contenance</label>
+            <input [(ngModel)]="bouteille.contenance" />
+        </div>
+
+        <button (click)="ajouterNouvelleBouteille()">OK</button>
+
+    </fieldset>
+
+</div>
