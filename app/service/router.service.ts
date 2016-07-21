@@ -1,5 +1,6 @@
 import {RouterConfig, provideRouter} from "@angular/router";
 import {ListeCaveComponent} from "../composant/liste-cave.component";
+import {AccueilComponent} from "../composant/accueil.component";
 
 /**
  * Nous créons un ensemble de règles de navigation qui vont servir
@@ -10,8 +11,12 @@ const routes: RouterConfig = [
 
     {
         path: '',
-        redirectTo: '/caves',
+        redirectTo: '/accueil',
         pathMatch: 'full'
+    },
+    {
+        path: 'accueil',
+        component: AccueilComponent
     },
     {
         path: 'caves',
