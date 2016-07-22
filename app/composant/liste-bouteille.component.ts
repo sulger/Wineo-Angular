@@ -17,11 +17,12 @@ export class ListeBouteilleComponent implements OnInit {
     }
 
     public chargerBouteille(){
-        this.bouteilles = this.caveService
-            .obtenirBouteilles();
+        this.caveService
+            .obtenirBouteilles()
+            .subscribe(resultat => this.bouteilles = resultat);
     }
 
-    public bouteilles: Bouteille[] = [ ];
+    public bouteilles: Bouteille[];
 
     public ngOnInit() {
     }
