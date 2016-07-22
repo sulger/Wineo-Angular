@@ -1,29 +1,28 @@
 import {Component, OnInit} from "@angular/core";
-import {Bouteille} from "../domain/bouteille";
-import {CaveService} from "../service/cave.service";
+import {Bouteille} from "../../domain/bouteille";
 import {DetailBouteilleComponent} from "./detail-bouteille.component";
+import {BouteilleService} from "../../service/bouteille.service";
 
 @Component({
     selector: 'liste-bouteille',
-    templateUrl: 'app/composant/liste-bouteille.component.html',
+    templateUrl: 'app/composant/bouteille/liste-bouteille.component.html',
     directives: [DetailBouteilleComponent],
-    providers: [CaveService]
+    providers: [BouteilleService]
 })
 
 export class ListeBouteilleComponent implements OnInit {
 
-    constructor(private caveService: CaveService) {
+    public bouteilles: Bouteille[];
 
-    }
+    constructor(private bouteilleService: BouteilleService) { }
 
     public chargerBouteille(){
-        this.caveService
+        this.bouteilleService
             .obtenirBouteilles()
             .then(resultat => this.bouteilles = resultat);
     }
 
-    public bouteilles: Bouteille[];
-
     public ngOnInit() {
+        this.chargerBouteille();
     }
 }

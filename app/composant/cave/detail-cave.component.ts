@@ -1,14 +1,14 @@
 import {Component, Input} from "@angular/core";
 
-import {Cave} from "../domain/cave";
-import {Bouteille} from "../domain/bouteille";
+import {Cave} from "../../domain/cave";
+import {Bouteille} from "../../domain/bouteille";
 
-import {DetailBouteilleComponent} from "./detail-bouteille.component";
-import {AjoutBouteilleComponent} from "./ajout-bouteille.component";
+import {DetailBouteilleComponent} from "../bouteille/detail-bouteille.component";
+import {AjoutBouteilleComponent} from "../bouteille/ajout-bouteille.component";
 
 @Component({
     selector: 'detail-cave',
-    templateUrl: 'app/composant/detail-cave.component.html',
+    templateUrl: 'app/composant/cave/detail-cave.component.html',
     directives: [DetailBouteilleComponent, AjoutBouteilleComponent]
 })
 

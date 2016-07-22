@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {ROUTER_DIRECTIVES} from "@angular/router";
-import {ListeBouteilleComponent} from "./composant/liste-bouteille.component";
+import {ListeBouteilleComponent} from "./composant/bouteille/liste-bouteille.component";
 
 @Component({
     selector: 'wineo',

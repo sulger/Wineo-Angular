@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from "@angular/core";
 
-import {Cave} from "../domain/cave";
+import {Cave} from "../../domain/cave";
 import {DetailCaveComponent} from "./detail-cave.component";
-import {CaveService} from "../service/cave.service";
+import {CaveService} from "../../service/cave.service";
 
 @Component({
     selector: 'liste-cave',
-    templateUrl: 'app/composant/liste-cave.component.html',
+    templateUrl: 'app/composant/cave/liste-cave.component.html',
     directives: [DetailCaveComponent],
     providers: [CaveService]
 })

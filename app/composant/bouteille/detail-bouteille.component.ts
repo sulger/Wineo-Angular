@@ -1,12 +1,10 @@
 import {Component, Input} from "@angular/core";
-
-import { Bouteille } from "../domain/bouteille";
-import {Cave} from "../domain/cave";
+import {Bouteille} from "../../domain/bouteille";
 
 
 @Component({
     selector: 'detail-bouteille',
-    templateUrl: 'app/composant/detail-bouteille.component.html'
+    templateUrl: 'app/composant/bouteille/detail-bouteille.component.html'
 })
 
 export class DetailBouteilleComponent {

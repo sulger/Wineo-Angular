@@ -1,7 +1,7 @@
 import {RouterConfig, provideRouter} from "@angular/router";
-import {ListeCaveComponent} from "../composant/liste-cave.component";
+import {ListeCaveComponent} from "../composant/cave/liste-cave.component";
 import {AccueilComponent} from "../composant/accueil.component";
-import {ListeBouteilleComponent} from "../composant/liste-bouteille.component";
+import {ListeBouteilleComponent} from "../composant/bouteille/liste-bouteille.component";
 
 /**
  * Nous créons un ensemble de règles de navigation qui vont servir
