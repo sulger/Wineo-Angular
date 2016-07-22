@@ -1,84 +1,26 @@
-import { Cave } from "../domain/cave";
 import {Injectable} from "@angular/core";
+import {Http, Response} from "@angular/http";
+import {Cave} from "../domain/cave";
+import {Bouteille} from "../domain/bouteille";
+import "rxjs/Rx";
+import {Observable} from "rxjs/Rx";
 
 @Injectable()
 export class CaveService {
 
-    // Mock d'une liste de cave
-    public caves: Cave[] = [
-        {
-            nomProprietaire: 'Toto',
-            capaciteMaximale: 100,
-            emplacement: 'AltF4',
-            bouteilles: [
-                {
-                    reference: 'KIFJG',
-                    designation: 'Chablis',
-                    contenance: 0.75,
-                    annee: 2014
-                },
-                {
-                    reference: 'FHEBIE',
-                    designation: 'Champagne',
-                    contenance: 1,
-                    annee: 2015
-                },
-                {
-                    reference: 'EFEFK',
-                    designation: 'Bordeaux',
-                    contenance: 0.75,
-                    annee: 2011
-                }
-            ]
-        },
-        {
-            nomProprietaire: 'Titi',
-            capaciteMaximale: 25,
-            emplacement: 'F5',
-            bouteilles: [
-                {
-                    reference: 'JDLFJ',
-                    designation: 'Chardonnais',
-                    contenance: 0.75,
-                    annee: 2012
-                },
-                {
-                    reference: 'LYFHGT',
-                    designation: 'Coca-Cola',
-                    contenance: 2,
-                    annee: 2016
-                }
-            ]
-        },
-        {
-            nomProprietaire: 'Michu',
-            capaciteMaximale: 5,
-            emplacement: 'D2',
-            bouteilles: [
-                {
-                    reference: 'MDSCN',
-                    designation: 'Lambrusco',
-                    contenance: 0.75,
-                    annee: 2014
-                },
-                {
-                    reference: 'PCEIEZC',
-                    designation: 'Saint-Julien',
-                    contenance: 0.75,
-                    annee: 1998
-                },
-                {
-                    reference: 'CSCSCR',
-                    designation: 'Bordeaux',
-                    contenance: 0.75,
-                    annee: 2014
-                }
-            ]
-        }
-    ]
+    constructor(private http: Http) { };
 
-    public obtenirCaves(): Cave[] {
-        return this.caves;
+    public obtenirBouteilles(): Promise<Bouteille[]> {
+
+        return this.http
+            .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille')
+            .toPromise()
+            .then((response: Response) => response.json() as Bouteille[]);
+    }
+
+    public obtenirCaves(): Promise<Cave[]> {
+
+        return null;
     }
 
 }

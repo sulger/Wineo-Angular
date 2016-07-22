@@ -35,7 +35,6 @@ export class ListeCaveComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.caves = this.caveService.obtenirCaves();
     }
 
 }
