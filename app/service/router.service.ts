@@ -1,6 +1,7 @@
 import {RouterConfig, provideRouter} from "@angular/router";
 import {ListeCaveComponent} from "../composant/liste-cave.component";
 import {AccueilComponent} from "../composant/accueil.component";
+import {ListeBouteilleComponent} from "../composant/liste-bouteille.component";
 
 /**
  * Nous créons un ensemble de règles de navigation qui vont servir
@@ -21,6 +22,10 @@ const routes: RouterConfig = [
     {
         path: 'caves',
         component: ListeCaveComponent
+    },
+    {
+        path: 'bouteilles',
+        component: ListeBouteilleComponent
     }
 
 ]
