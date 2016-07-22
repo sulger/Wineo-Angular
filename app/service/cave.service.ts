@@ -10,11 +10,12 @@ export class CaveService {
 
     constructor(private http: Http) { };
 
-    public obtenirBouteilles(): Observable<Bouteille[]> {
+    public obtenirBouteilles(): Promise<Bouteille[]> {
 
         return this.http
             .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille')
-            .map((response: Response) => response.json() as Bouteille[]);
+            .toPromise()
+            .then((response: Response) => response.json() as Bouteille[]);
     }
 
     public obtenirCaves(): Promise<Cave[]> {

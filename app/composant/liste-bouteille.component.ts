@@ -19,7 +19,7 @@ export class ListeBouteilleComponent implements OnInit {
     public chargerBouteille(){
         this.caveService
             .obtenirBouteilles()
-            .subscribe(resultat => this.bouteilles = resultat);
+            .then(resultat => this.bouteilles = resultat);
     }
 
     public bouteilles: Bouteille[];
