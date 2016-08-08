@@ -1,0 +1,12 @@
+<nav>
+    <a [routerLink]="['/accueil']">Accueil</a>
+    |
+    <a [routerLink]="['/caves']">Liste des caves</a>
+    |
+    <a [routerLink]="['/bouteilles']">Liste des bouteilles</a>
+    |
+    <a [routerLink]="['/bouteilles/creation_bouteille']">Creation des bouteilles</a>
+</nav>
+
+<!-- Le composant sélectionnée par la règle de navigation s'affiche ici.  -->
+<router-outlet></router-outlet>

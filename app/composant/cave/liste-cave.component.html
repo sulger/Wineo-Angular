@@ -1,0 +1,13 @@
+<div id="listeCave">
+
+    <ul>
+        <li *ngFor="let c of caves">
+            <span (click)="selectionnerCave(c)">
+                {{ c.emplacement }} ({{ c.nomProprietaire }})
+            </span>
+        </li>
+    </ul>
+
+    <detail-cave [cave]="caveSelectionnee"></detail-cave>
+
+</div>

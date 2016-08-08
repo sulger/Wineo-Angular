@@ -1,0 +1,24 @@
+<div id="creationBouteille"ngIf="bouteille">
+
+<fieldset>
+    <legend>creer une nouvelle bouteille </legend>
+
+
+    <div>
+        <label>Désignation</label>
+        <input [(ngModel)]="bouteille.designation" />
+    </div>
+    <div>
+        <label>Année</label>
+        <input [(ngModel)]="bouteille.annee"  />
+    </div>
+    <div>
+        <label>Contenance</label>
+        <input [(ngModel)]="bouteille.contenance" />
+    </div>
+
+    <button (click)="creerNouvelleBouteille()">OK</button>
+
+</fieldset>
+
+</div>
