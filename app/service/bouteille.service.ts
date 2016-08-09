@@ -16,11 +16,22 @@ export class BouteilleService{
             .toPromise()
             .then(response => response.json() as Bouteille[]);
     }
-    public creerBouteilles(): Promise<Bouteille> {
+
+    public creerBouteille(): Promise<Bouteille> {
 
         return this.http
-            .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille/creation_bouteille')
+            .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille')
+           .toPromise()
+           .then(response => response.json() as Bouteille)
+
+
+    }
+    public consignerBouteille(): Promise<String> {
+
+        return this.http
+            .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille')
             .toPromise()
-            .then(response => response.json() as Bouteille);
+            .then(response => response.json() as String);
+
     }
 }

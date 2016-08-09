@@ -17,10 +17,10 @@ export class ListeBouteilleComponent implements OnInit {
     constructor(private bouteilleService: BouteilleService) { }
 
     public chargerBouteille(){
-        this.bouteilleService
-            .obtenirBouteilles()
-            .then(resultat => this.bouteilles = resultat);
-    }
+    this.bouteilleService
+        .obtenirBouteilles()
+        .then(resultat => this.bouteilles = resultat);
+}
 
     public ngOnInit() {
         this.chargerBouteille();
