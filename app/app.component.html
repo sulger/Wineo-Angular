@@ -1,10 +1,48 @@
+<!--
 <nav>
     <a [routerLink]="['/accueil']">Accueil</a>
     |
     <a [routerLink]="['/caves']">Liste des caves</a>
     |
     <a [routerLink]="['/bouteilles']">Liste des bouteilles</a>
+    |
+    |
+    <a [routerLink]="['/clients']">Liste des clients</a>
+    |
+    |
+    <a [routerLink]="['/reservations']">Liste des reservations</a>
 </nav>
+-->
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a [routerLink]="['/accueil']">Accueil</a></li>
+                |
+                <li>  <a [routerLink]="['/caves']">Liste des caves</a></li>
+                |
+                |
+                <li> <a [routerLink]="['/bouteilles']">Liste des bouteilles</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 <!-- Le composant sélectionnée par la règle de navigation s'affiche ici.  -->
 <router-outlet></router-outlet>

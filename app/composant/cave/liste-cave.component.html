@@ -1,5 +1,7 @@
+<div class="container">
 <div id="listeCave">
 
+    liste des caves  avec l'emplacement et le nom de proprietaire
     <ul>
         <li *ngFor="let c of caves">
             <span (click)="selectionnerCave(c)">
@@ -10,4 +12,5 @@
 
     <detail-cave [cave]="caveSelectionnee"></detail-cave>
 
+</div>
 </div>

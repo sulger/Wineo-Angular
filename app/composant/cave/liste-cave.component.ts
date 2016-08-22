@@ -25,6 +25,16 @@ export class ListeCaveComponent implements OnInit {
     // Cave sélectionnée dans la liste.
     public caveSelectionnee: Cave;
 
+
+    public chargerCave(){
+
+        //noinspection TypeScriptUnresolvedFunction
+        this.caveService
+            .obtenirCaves()
+            .then(resul => this.caves = resul);
+    }
+
+
     /**
      * Sélectionner une cave.
      *
@@ -35,6 +45,13 @@ export class ListeCaveComponent implements OnInit {
     }
 
     public ngOnInit() {
+        this.chargerCave();
     }
 
 }
+
+
+
+
+
+

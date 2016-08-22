@@ -1,29 +1,32 @@
-<div id="detailCave" *ngIf="cave">
 
-    <div>
-        <label>Nom du propriétaire</label>
-        <span>{{ cave.nomProprietaire }}</span>
-    </div>
-    <div>
-        <label>Capacité maximale</label>
-        <span>{{ cave.capaciteMaximale }}</span>
-    </div>
-    <div>
-        <label>Emplacement</label>
-        <span>{{ cave.emplacement }}</span>
-    </div>
-    <div>
-        <ul>
-            <li *ngFor="let b of cave.bouteilles">
+<div class="container">
+    <div id="detailCave" *ngIf="cave">
+        detail du client
+        <div class="list-group-item list-group-item-success">
+            <label>Nom du propriétaire</label>
+            <span>{{ cave.nomProprietaire }}</span>
+        </div>
+        <div class="list-group-item list-group-item-success">
+            <label>Capacité maximale</label>
+            <span>{{ cave.capaciteMaximale }}</span>
+        </div>
+        <div class="list-group-item list-group-item-success">
+            <label>Emplacement</label>
+            <span>{{ cave.emplacement }}</span>
+        </div>
+
+        <div>
+            <ul>
+                <li *ngFor="let b of cave.bouteilles">
                 <span (click)="selectionnerBouteille(b)">
                     {{ b.designation }} ({{ b.reference }})
                 </span>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <detail-bouteille [bouteille]="bouteilleSelectionnee"></detail-bouteille>
+
+        <ajout-bouteille [cave]="cave"></ajout-bouteille>
     </div>
-
-    <detail-bouteille [bouteille]="bouteilleSelectionnee"></detail-bouteille>
-
-    <ajout-bouteille [cave]="cave"></ajout-bouteille>
-
 </div>

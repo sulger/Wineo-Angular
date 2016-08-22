@@ -1,11 +1,57 @@
-<div id="listeBouteille">
 
-    <ul>
+<div class="container">
+    <div id="listeBouteille">
+        <p-dataTable
+                [(selection)]="bouteilleSelectionnee"
+                [value]="bouteille"
+                [editable]="true">
+            <header>listes bouteille</header>
+            <p-column [style]="{'width':'40px'}" selectionMode="single"></p-column>
+            <p-column field="reference" header="Reference"
+                      [sortable]="true">
+            </p-column>
+            <p-column field="contenance" header="Contenance"
+                      [sortable]="true" [editable]="true">
+            </p-column>
+            <p-column field="designation" header="Designation"
+                      [sortable]="true" [editable]="true">
+            </p-column>
+            <p-column field="annee" header="Annee"
+                      [sortable]="true" [editable]="true">
+            </p-column>
 
-        <li *ngFor="let b of bouteilles">
-            <detail-bouteille [bouteille]="b"></detail-bouteille>
-        </li>
 
-    </ul>
+            <footer>
+                <div class="ui-helper-clearfix" style="width:100%">
 
-</div>
+
+                </div>
+            </footer>
+
+
+
+        </p-dataTable>
+        <button (click)="chargerBouteille()">Rafraichir</button>
+        <button (click)="modifier()">Enregistrer</button>
+        <button (click)="supprimerBouteille(bouteilleSelectionnee)">supprimer</button>
+
+
+
+        <form>
+
+            <label>nom</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleBouteille.reference" />
+
+            <label>date</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleBouteille.contenance" />
+
+            <label>nbperson</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleBouteille.designation" />
+
+            <label>prix</label>
+            <input class="form-control" type="text" [(ngModel)]="nouvelleBouteille.annee" />
+
+            <button (click)="creerNouvelleBouteille()">OK</button>
+
+        </form>
+    </div>

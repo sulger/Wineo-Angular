@@ -21,6 +21,7 @@ export class AjoutBouteilleComponent {
      * Ajouter une nouvelle bouteille
      */
     public ajouterNouvelleBouteille() {
+        //noinspection TypeScriptUnresolvedFunction
         this.cave.bouteilles.push(Object.assign({ }, this.bouteille));
         // Nous réinitialisons la bouteille liée au formulaire.
         this.bouteille = new Bouteille();

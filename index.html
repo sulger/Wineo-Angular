@@ -5,13 +5,21 @@
     <base href="/"/>
 
     <!-- 1. Load libraries -->
-    <!-- Polyfill(s) for older browsers -->
+    <!-- Polyfill(s) for older browsers --><link rel="stylesheet" type="text/css" href="node_modules/primeui/themes/omega/theme.css" />
+    <link rel="stylesheet" type="text/css" href="app/ressource/icons/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/primeui/primeui-ng-all.min.css" />
+
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
+    <!-- 3. boostrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <script>
         System.import('app').catch(function (err) {
             console.error(err);

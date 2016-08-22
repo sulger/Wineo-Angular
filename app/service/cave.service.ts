@@ -8,11 +8,15 @@ import {Observable} from "rxjs/Rx";
 @Injectable()
 export class CaveService {
 
-    constructor(private http: Http) { };
+    constructor (private http: Http) { };
 
+    //noinspection TypeScriptUnresolvedVariable
     public obtenirCaves(): Promise<Cave[]> {
 
-        return null;
+        //noinspection TypeScriptUnresolvedFunction
+        return this.http
+            .get('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/caves')
+            .toPromise()
+            .then(response => response.json() as Cave[]);
     }
-
 }

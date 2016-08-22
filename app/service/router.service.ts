@@ -2,6 +2,8 @@ import {RouterConfig, provideRouter} from "@angular/router";
 import {ListeCaveComponent} from "../composant/cave/liste-cave.component";
 import {AccueilComponent} from "../composant/accueil.component";
 import {ListeBouteilleComponent} from "../composant/bouteille/liste-bouteille.component";
+//import {ListeClientComponent} from "../composant/client/liste-client.component";
+//import {ListeReservationComponent} from "../composant/reservation/liste-reservation.component";
 
 /**
  * Nous créons un ensemble de règles de navigation qui vont servir
@@ -26,8 +28,16 @@ const routes: RouterConfig = [
     {
         path: 'bouteilles',
         component: ListeBouteilleComponent
-    }
-
+    },
+   // {
+   //     path: 'clients',
+    //    component: ListeClientComponent
+    //},
+   // {
+    //    path: 'reservations',
+    //    component: ListeReservationComponent
+   // },
+//
 ]
 
 /**
