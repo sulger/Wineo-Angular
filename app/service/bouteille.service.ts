@@ -23,6 +23,7 @@ export class BouteilleService{
 
         return this.http
             .post('http://localhost:8080/middleware-0.1-SNAPSHOT/ws/bouteille', Json.stringify(bouteille),options)
+      //      .toPromise();
             .toPromise();
     }
 
