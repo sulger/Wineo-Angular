@@ -5,4 +5,5 @@ export class Bouteille {
     public contenance:number;
     public annee:number;
 
+
 }
