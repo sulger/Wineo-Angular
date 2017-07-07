@@ -1,0 +1,10 @@
+[0623/210759.232:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
+[0623/210759.248:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0623/210759.248:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
+[0627/183024.468:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0627/183024.470:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0627/183024.471:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0627/183024.471:ERROR:persistent_memory_allocator.cc(678)] Corruption detected in shared-memory segment.
+[0627/183024.477:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
+[0627/183024.500:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0627/183024.507:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
